@@ -33,18 +33,11 @@ export default class App extends React.Component {
       extrapolate: 'clamp'
     });
 
-    const pic = {
-      uri: 'https://static1.squarespace.com/static/56698c6ca976af23a57893a2/t/582108bde58c62a163dbfe64/1500473726445/Rocky+Mountains?format=2500w'
-    };
-
     const randomPic = {
       uri: 'https://picsum.photos/250/?random'
     }
 
-
-
     return (
-
       <View style={styles.container}>
         <Animated.View style={[styles.header, { height: headerHeight }]}>
           <Animated.Text style={[styles.titleTextFirst, { opacity: heroTitleOpacity }]}>Hello World, built with React Native. So easy. So fun.</Animated.Text>
@@ -73,16 +66,16 @@ export default class App extends React.Component {
               color="white"
             />
           </View>
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
-          <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
+          <Image source={randomPic} style={styles.image} />
         </ScrollView>
       </View>
     );
@@ -91,12 +84,11 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#eaeaea',
   },
   scrollContainer: {
     padding: 14,
-    paddingTop: HEADER_EXPANDED_HEIGHT
+    paddingTop: HEADER_EXPANDED_HEIGHT,
   },
   header: {
     backgroundColor: '#39CCCC',
@@ -129,6 +121,11 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     marginTop: 10,
     marginBottom: 10,
-    backgroundColor: '#2d2d2d'
-  }
+    backgroundColor: '#2d2d2d',
+  },
+  image: {
+    marginTop: 10,
+    width: 350,
+    height: 270,
+  },
 });
