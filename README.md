@@ -4,7 +4,7 @@ Future me:
 There is not much in here just me playing around with create react native app, following the docs.
 
 
-=============================================================================================
+=================================================================
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
