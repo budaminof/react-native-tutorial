@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, ScrollView, Animated, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, ScrollView, Animated, Dimensions, Button, VibrationIOS } from 'react-native';
 import { Image } from 'react-native';
 
 const HEADER_EXPANDED_HEIGHT = 300;
@@ -41,12 +41,14 @@ export default class App extends React.Component {
       uri: 'https://picsum.photos/250/?random'
     }
 
+
+
     return (
 
       <View style={styles.container}>
         <Animated.View style={[styles.header, { height: headerHeight }]}>
-          <Animated.Text style={[styles.titleTextFirst, { opacity: headerTitleOpacity }]}>Hello World</Animated.Text>
-          <Animated.Text style={[styles.titleTextSecond, { opacity: heroTitleOpacity }]}>Hello World, built with React Native. So easy. So fun.</Animated.Text>
+          <Animated.Text style={[styles.titleTextFirst, { opacity: heroTitleOpacity }]}>Hello World, built with React Native. So easy. So fun.</Animated.Text>
+          <Animated.Text style={[styles.titleTextSecond, { opacity: headerTitleOpacity }]}>Hello World</Animated.Text>
         </Animated.View>
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
@@ -60,8 +62,17 @@ export default class App extends React.Component {
             }])
           }
           scrollEventThrottle={16}>
-          <Text style={styles.title}>This is a title</Text>
-          <Text style={styles.content}>And this is some information.</Text>
+          <Text style={styles.title}>This is a spring day in Boulder</Text>
+          <Text style={styles.content}>We are done with LP2, and my team just release beta so I have some time to learn new things and play around. </Text>
+          <View style={styles.buttonWrapper}>
+            <Button
+              onPress={() => {
+                VibrationIOS.vibrate();
+              }}
+              title="CLICK ME"
+              color="white"
+            />
+          </View>
           <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
           <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
           <Image source={randomPic} style={{ width: 350, height: 250, marginTop: 10 }} />
@@ -93,25 +104,31 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     top: 0,
     left: 0,
-    zIndex: 9999
+    zIndex: 9999,
   },
   title: {
     marginVertical: 16,
-    color: "black",
+    color: "#2d2d2d",
     fontWeight: "bold",
     fontSize: 24
   },
-  titleTextFirst: {
+  titleTextSecond: {
     textAlign: 'center',
     fontSize: 18,
-    color: 'black',
+    color: '#2d2d2d',
     marginTop: 28,
   },
-  titleTextSecond: {
+  titleTextFirst: {
     textAlign: 'left',
     fontSize: 32,
-    color: 'black',
+    color: '#2d2d2d',
     position: 'absolute',
     bottom: 16,
+    paddingLeft: 10
   },
+  buttonWrapper: {
+    marginTop: 10,
+    marginBottom: 10,
+    backgroundColor: '#2d2d2d'
+  }
 });
